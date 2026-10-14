@@ -1,0 +1,24 @@
+[project]
+name = "landslide-backend"
+version = "0.1.0"
+description = "FastAPI backend for landslide risk assessment and resource allocation"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "sqlalchemy[asyncio]>=2.0.35",
+    "asyncpg>=0.30.0",
+    "geoalchemy2>=0.15.2",
+    "alembic>=1.13.0",
+    "redis>=5.0.8",
+    "httpx>=0.27.2",
+    "pydantic[email]>=2.9.2",
+    "pydantic-settings>=2.5.2",
+    "celery>=5.4.0",
+    "python-dotenv>=1.0.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"

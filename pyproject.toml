@@ -1,15 +1,34 @@
 [project]
 name = "landslide-model"
 version = "0.1.0"
-description = "Add your description here"
+description = "Landslide prediction model and backend platform"
 readme = "README.md"
 authors = [
     { name = "sid535", email = "115077155+Sid535@users.noreply.github.com" }
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "geopandas>=1.1.4",
+    "imdlib>=0.1.21",
+    "matplotlib>=3.11.1",
+    "numpy>=2.5.2",
+    "pillow>=12.3.0",
+    "rasterio>=1.5.1",
     "requests>=2.34.2",
+    "scikit-learn>=1.9.0",
+    "segmentation-models-pytorch>=0.5.0",
+    "torch>=2.13.0",
+    "torchvision>=0.28.0",
+    "tqdm>=4.70.0",
     "zenodo-get>=3.0.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "aiosqlite>=0.20.0",
 ]
 
 [project.scripts]
@@ -18,3 +37,6 @@ landslide-model = "landslide_model:main"
 [build-system]
 requires = ["uv_build>=0.12.2,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.workspace]
+members = ["backend"]
